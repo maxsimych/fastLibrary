@@ -1,0 +1,22 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    ports:
+      - "442:442"
+    environment:
+      - REDIS_HOST=redis
+      - MONGODB_HOST=db
+      - PORT=442
+    depends_on:
+      - db
+      - redis
+  db:
+    image: mongo
+    ports:
+      - "27017:27017"
+  redis:
+    image: redis
+    command:  redis-server --maxmemory 10mb --maxmemory-policy allkeys-lfu
+    ports:
+      - "6379:6379"
