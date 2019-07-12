@@ -1,7 +1,7 @@
 {
   "name": "fastlibrary",
   "version": "0.1.0",
-  "description": "backend app with Redis cache and Docker containerization",
+  "description": "backend app with Redis cache, MongoDB database and Docker containerization",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server"
